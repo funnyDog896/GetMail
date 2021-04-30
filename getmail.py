@@ -27,7 +27,7 @@ def EmailAccountAuthByNtlmHash(username, ntlmhash, email, server=None, flag=True
             print("[+] 邮箱账号认证登录成功")
             return email
         else:
-            config = Configuration(server, credentials)
+            config = Configuration(credentials=credentials, server=server)
             email = Account(primary_smtp_address=email, config=config, autodiscover=False)
             return email
     except Exception as error:
